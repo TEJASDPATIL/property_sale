@@ -1,0 +1,21 @@
+{% load staticfiles %}
+{% include "usercheck.html" %}
+<br>
+<table align="center" border="2" width="300">
+    <tr><th colspan="3">CLICK ON PLOT NO FOR DETAIL</th></tr>
+    <tr>
+        <th>PLOT NO</th>
+        <th>ROAD NO</th>
+        <th>SURVEY NO</th>
+    </tr>
+    {% for x in data %}
+        <tr>
+        <th>
+            <a href="{% url 'viewplotdetail'%}?plno={{ x.plotno }}">{{ x.plotno }}</a>
+        </th>
+        <th>{{ x.roadno }}</th>
+        <th>{{ x.surveyno }}</th>
+        </tr>
+    {% endfor %}
+
+</table>

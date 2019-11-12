@@ -1,0 +1,32 @@
+{% include "usercheck.html" %}
+
+
+<table align="center" border="2" width="300" bgcolor="aqua">
+    <tr><th colspan="10">FLAT DETAILS</th></tr>
+    <tr>
+        <th>Flat no</th>
+        <th>Apartment Name</th>
+        <th>Apartment Location</th>
+        <th>Area in sqft</th>
+        <th>Cost/sqft</th>
+        <th>Mainatance Charges</th>
+        <th>Facing</th>
+        <th>STATUS</th>
+        <th>TOTAL COST</th>
+    </tr>
+    {% for x in data1 %}
+        <tr>
+        <th>{{ x.flatno }}</th>
+        <th>{{ x.apname }}</th>
+        <th>{{ x.aplocation }}</th>
+        <th>{{x.areasqft }}</th>
+        <th>{{x.costpsqft }}</th>
+        <th>{{ x.maintcost }}</th>
+        <th>{{ x.facing}}</th>
+        <th>{{ x.status }}</th>
+        <th>{{ x.totalcost }}</th>
+
+        </tr>
+    {% endfor %}
+
+</table>

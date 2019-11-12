@@ -1,0 +1,12 @@
+{% load staticfiles %}
+{% include "usercheck.html" %}
+<br><br><br>
+<form action="{% url 'update' %}" method="post">
+    {% csrf_token %}
+<table align="center" border="0">
+        <tr>
+            <th>Plot no:</th>
+            <th><input type="number" required name="plno"></th>
+            <th><button type="submit">Get Plot</button></th>
+        </tr>
+</table></form>

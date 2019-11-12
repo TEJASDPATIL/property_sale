@@ -1,0 +1,90 @@
+{% load staticfiles %}
+{% include "basic.html" %}
+<br><br>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body bgcolor="#adff2f">
+
+    <div class="navbar">
+      <a href="{% url 'home' %}">Home</a>
+  <div class="dropdown">
+    <button class="dropbtn">PLOTS
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="{% url 'newplot' %}">NEW PLOT</a>
+      <a href="{% url 'editplot' %}">EDIT PLOT</a>
+      <a href="{% url 'getplot' %}">VIEW PLOT</a>
+    </div>
+
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">APARTMENTS
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="{% url 'newflat' %}">ADD FLAT</a>
+      <a href="{% url 'viewflat' %}">VIEW FLATS</a>
+    </div>
+
+  </div>
+    <div class="dropdown">
+    <button class="dropbtn">SALES
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+
+    </div>
+
+  </div>
+    <div class="dropdown">
+    <button class="dropbtn">EMPLOYEES
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="{% url 'newemp' %}">NEW EMPLOYEE</a>
+      <a href="{% url 'viewemp' %}">VIEW EMPLOYEE</a>
+    </div>
+
+  </div>
+    <div class="dropdown">
+    <button class="dropbtn">REPORTS
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+
+    </div>
+
+  </div>
+    <div class="dropdown">
+        <form action="{% url 'about' %}">
+    <button class="dropbtn">ABOUT
+    </button></form>
+    <div class="dropdown-content">
+    </div>
+
+  </div>
+    <div class="dropdown">
+        <form action="{% url 'main' %}">
+    <button class="dropbtn">LOGOUT
+    </button></form>
+    <div class="dropdown-content">
+
+
+  </div>
+</div>
+<br>
+    <div>
+         {% if message %}
+{{ message }}
+{% endif %}
+    </div>
+    <h1>Welcome Admin</h1>
+
+</body>
+</html>

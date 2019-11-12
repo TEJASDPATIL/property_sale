@@ -1,0 +1,12 @@
+{% load staticfiles %}
+{% include "basic.html" %}
+<br><br><br>
+<form action="{% url 'viewflat' %}" method="post">
+    {% csrf_token %}
+<table align="center" border="0">
+        <tr>
+            <th>Flat no:</th>
+            <th><input type="number" required name="fltno"></th>
+            <th><button type="submit">Get Flat</button></th>
+        </tr>
+</table></form>

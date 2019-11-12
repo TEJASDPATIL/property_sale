@@ -1,0 +1,78 @@
+{% load staticfiles %}
+{% include "usercheck.html" %}
+
+<br>
+<br>
+<br>
+<body>
+        <form action="{% url 'saveplot' %}" method="post">
+            {% csrf_token %}
+        <table align="center" border="0" width="300">
+            <tr>
+                <th colspan="2"><h1>REGISTER NEW PLOT</h1></th>
+            </tr>
+            <tr>
+                <th align="left">Plot no:</th>
+                <th><input type="number" required name="pno"></th>
+            </tr>
+           <tr>
+                <th align="left">Road no:</th>
+                <th><input type="number" required name="rdno"></th>
+            </tr>
+            <tr>
+                <th align="left">Survey no:</th>
+                <th><input type="number" required name="sno"></th>
+            </tr>
+            <tr>
+                <th align="left">Area in sqyard:</th>
+                <th><input type="number" required name="ar"></th>
+            </tr>
+            <tr>
+                <th align="left">Cost per sqyard:</th>
+                <th><input type="number" required name="rate"></th>
+            </tr>
+            <tr>
+                <th align="left">Other Expenses:</th>
+                <th><input type="number" required name="exp"></th>
+            </tr>
+             <tr>
+                <th align="left">Boundaries:</th>
+                <th><input type="number" required name="bn"></th>
+            </tr>
+            <tr>
+                <th align="left">Facing:</th>
+                <th align="center">
+                    <select required name="fc">
+                    <option>-----</option>
+                    <option VALUE="EAST">EAST</option>
+                    <option value="WEST">WEST</option>
+                </select>
+                </th>
+            </tr>
+            <tr>
+                <th align="left">Status:</th>
+                <th align="center">
+                    <select required name="st">
+                    <option>-----</option>
+                    <option VALUE="VACANT">VACANT</option>
+                    <option value="SOLD">SOLD</option>
+                    <option value="RESERVE">RESERVE</option>
+                </select>
+                </th>
+            </tr>
+            <tr>
+                <th align="left">Total Cost:</th>
+                <th><input type="number" required name="tc"></th>
+            </tr>
+            <tr>
+                <th align="left">Plot Photo:</th>
+                <th><input type="file" name="pph"></th>
+            </tr>
+            <tr>
+                <th align="cenetr">
+                    <button type="submit">SAVE</button>
+                </th>
+            </tr>
+        </table>
+            </form>
+</body>

@@ -1,0 +1,31 @@
+{% include "usercheck.html" %}
+
+
+<table align="center" border="2" width="300" bgcolor="aqua">
+    <tr><th colspan="10">EMPLOYEE DETAILS(Click on Empid to update and click on delete to delete Emp)</th></tr>
+    <tr>
+        <th>Employee Id</th>
+        <th>Employee Name</th>
+        <th>Employee Email</th>
+        <th>Employee Location</th>
+        <th>Employee DOJ</th>
+        <th>Employee Role</th>
+        <th>Employee Remark</th>
+        <th bgcolor="red">DELETE EMPLOYEE</th>
+
+    </tr>
+    {% for x in data %}
+        <tr>
+        <th><a href="{% url 'editemp' %}?eid={{ x.eid }}">{{ x.eid}}</th></a>
+        <th>{{ x.ename }}</th>
+        <th>{{ x.eemail }}</th>
+        <th>{{x.elocation }}</th>
+        <th>{{x.edoj }}</th>
+        <th>{{ x.erole }}</th>
+        <th>{{ x.eremark }}</th>
+        <th bgcolor="red"><a href="{% url 'deleteemp' %}?eid={{ x.eid }}">DELETE</th></a>
+
+        </tr>
+    {% endfor %}
+
+</table>
